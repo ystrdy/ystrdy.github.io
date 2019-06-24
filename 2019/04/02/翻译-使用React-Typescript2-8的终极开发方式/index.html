@@ -343,8 +343,8 @@
 <blockquote>
 <p>所有代码和示例都基于typescript 2.8的严格模式</p>
 </blockquote>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>首先，我们需要安装typescript和tslib模块，帮助我们生成更精简的代码<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn add -D typescript@next</span><br><span class="line"><span class="meta">#</span> tslib仅作用于编译后的代码，本身不导出任何功能</span><br><span class="line">yarn add tslib</span><br></pre></td></tr></table></figure></p>
-<p>接下来可以初始化我们的typescript配置：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 这将在我们的项目目录中创建一个tsconfig.json配置文件</span><br><span class="line">yarn tsc --init</span><br></pre></td></tr></table></figure></p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>首先，我们需要安装typescript和tslib模块，帮助我们生成更精简的代码<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn add -D typescript@next</span><br><span class="line"><span class="meta">#</span><span class="bash"> tslib仅作用于编译后的代码，本身不导出任何功能</span></span><br><span class="line">yarn add tslib</span><br></pre></td></tr></table></figure></p>
+<p>接下来可以初始化我们的typescript配置：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 这将在我们的项目目录中创建一个tsconfig.json配置文件</span></span><br><span class="line">yarn tsc --init</span><br></pre></td></tr></table></figure></p>
 <p>现在让我们安装react，react-dom及其类型定义。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn add react react-dom</span><br><span class="line">yarn add -D @types/react @types/react-dom</span><br></pre></td></tr></table></figure></p>
 <p>好了，现在让我们开始学习如何在Typescript中使用组件模式。</p>
 <h2 id="无状态组件-Stateless-Component"><a href="#无状态组件-Stateless-Component" class="headerlink" title="无状态组件(Stateless Component)"></a>无状态组件(Stateless Component)</h2><p>无状态组件是什么？它大多数的时候，只是一个纯函数。现在让我们用typescript来创建一个无状态的Button组件</p>
@@ -669,7 +669,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -682,7 +682,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

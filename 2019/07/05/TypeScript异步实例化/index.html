@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="typescript,">
+  <meta name="keywords" content="typescript javascript,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="在typescript中，获取数组中的子项类型有以下代码： 123456const array = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];type ArrayType = typeof array;       // string[];type ItemType = ArrayType[number];  // string// 简写type NextItemType = (typeof array)[">
-<meta name="keywords" content="typescript">
+<meta name="description" content="123456789101112131415161718192021222324class BaseClass &amp;#123;    public constructor(protected element: HTMLElement) &amp;#123;&amp;#125;    public static async build&amp;lt;T extends &amp;#123; new (...args: any[]):">
+<meta name="keywords" content="typescript javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="typescript获取数组的类型">
-<meta property="og:url" content="https://ystrdy.github.io/2019/06/03/typescript获取数组的类型/index.html">
+<meta property="og:title" content="TypeScript异步实例化">
+<meta property="og:url" content="https://ystrdy.github.io/2019/07/05/TypeScript异步实例化/index.html">
 <meta property="og:site_name" content="ystrdy的博客">
-<meta property="og:description" content="在typescript中，获取数组中的子项类型有以下代码： 123456const array = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];type ArrayType = typeof array;       // string[];type ItemType = ArrayType[number];  // string// 简写type NextItemType = (typeof array)[">
+<meta property="og:description" content="123456789101112131415161718192021222324class BaseClass &amp;#123;    public constructor(protected element: HTMLElement) &amp;#123;&amp;#125;    public static async build&amp;lt;T extends &amp;#123; new (...args: any[]):">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-03T06:05:26.121Z">
+<meta property="og:updated_time" content="2019-07-05T07:48:46.898Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="typescript获取数组的类型">
-<meta name="twitter:description" content="在typescript中，获取数组中的子项类型有以下代码： 123456const array = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];type ArrayType = typeof array;       // string[];type ItemType = ArrayType[number];  // string// 简写type NextItemType = (typeof array)[">
+<meta name="twitter:title" content="TypeScript异步实例化">
+<meta name="twitter:description" content="123456789101112131415161718192021222324class BaseClass &amp;#123;    public constructor(protected element: HTMLElement) &amp;#123;&amp;#125;    public static async build&amp;lt;T extends &amp;#123; new (...args: any[]):">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://ystrdy.github.io/2019/06/03/typescript获取数组的类型/">
+  <link rel="canonical" href="https://ystrdy.github.io/2019/07/05/TypeScript异步实例化/">
 
 
 
 
 
-  <title>typescript获取数组的类型 | ystrdy的博客</title>
+  <title>TypeScript异步实例化 | ystrdy的博客</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ystrdy.github.io/2019/06/03/typescript获取数组的类型/">
+    <link itemprop="mainEntityOfPage" href="https://ystrdy.github.io/2019/07/05/TypeScript异步实例化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ystrdy">
@@ -250,7 +250,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">typescript获取数组的类型</h2>
+          <h2 class="post-title" itemprop="name headline">TypeScript异步实例化</h2>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-03T13:50:06+08:00">
-                2019-06-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-05T15:39:53+08:00">
+                2019-07-05
               </time>
             
 
@@ -300,10 +300,7 @@
       
 
       
-        <h2 id="在typescript中，获取数组中的子项类型"><a href="#在typescript中，获取数组中的子项类型" class="headerlink" title="在typescript中，获取数组中的子项类型"></a>在typescript中，获取数组中的子项类型</h2><p>有以下代码：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> array = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"><span class="keyword">type</span> ArrayType = <span class="keyword">typeof</span> array;       <span class="comment">// string[];</span></span><br><span class="line"><span class="keyword">type</span> ItemType = ArrayType[<span class="built_in">number</span>];  <span class="comment">// string</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 简写</span></span><br><span class="line"><span class="keyword">type</span> NextItemType = (<span class="keyword">typeof</span> array)[<span class="built_in">number</span>];</span><br></pre></td></tr></table></figure>
-<p>第一次看到<code>(typeof array)[number]</code>的时候，没法理解其中的<code>[number]</code>是什么意思，仔细思考下来，可以理解为<code>(typeof array)[0]</code>，这是取数组中的第一个元素的类型，那么引申开来，<code>0</code>可以用<code>number</code>表示，那么<code>(typeof array)[number]</code>去的就是<code>array</code>的所有项目的类型，对于上面这个例子，不管是用<code>(typeof array)[number]</code>还是<code>(typeof array)[0]</code>的结果都是一样的，但是下面这个例子，就不一样了</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> array = [<span class="string">'a'</span>, <span class="string">'1'</span>, <span class="literal">true</span>];</span><br><span class="line"><span class="keyword">type</span> ItemType = (<span class="keyword">typeof</span> array)[<span class="built_in">number</span>];       <span class="comment">// string | number | boolean</span></span><br><span class="line"><span class="keyword">type</span> ItemTypeString = (<span class="keyword">typeof</span> array)[<span class="number">0</span>];        <span class="comment">// string</span></span><br></pre></td></tr></table></figure>
+        <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> BaseClass &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">constructor</span>(<span class="params"><span class="keyword">protected</span> element: HTMLElement</span>) &#123;&#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">async</span> build&lt;T <span class="keyword">extends</span> &#123; <span class="keyword">new</span> (...args: <span class="built_in">any</span>[]): &#123;&#125; &#125; = <span class="keyword">typeof</span> BaseClass&gt;(</span><br><span class="line">        <span class="keyword">this</span>: T,</span><br><span class="line">        ...args: ConstructorParameters&lt;T&gt;</span><br><span class="line">    ): <span class="built_in">Promise</span>&lt;InstanceType&lt;T&gt;&gt; &#123;</span><br><span class="line">        <span class="keyword">const</span> instance = <span class="keyword">new</span> (<span class="keyword">this</span> <span class="keyword">as</span> <span class="built_in">any</span>)(...args);</span><br><span class="line">        <span class="keyword">await</span> instance.init();</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">async</span> init(): <span class="built_in">Promise</span>&lt;<span class="built_in">void</span>&gt; &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// example1</span></span><br><span class="line"><span class="keyword">class</span> Example1 <span class="keyword">extends</span> BaseClass &#123;&#125;</span><br><span class="line"><span class="keyword">const</span> ex1 = Example1.build(<span class="built_in">document</span>.body);      <span class="comment">// 只需要传递HTMLElement就够了</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// example2</span></span><br><span class="line"><span class="keyword">class</span> Example2 <span class="keyword">extends</span> BaseClass &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">constructor</span>(<span class="params"><span class="keyword">protected</span> element: HTMLElement, <span class="keyword">private</span> id: <span class="built_in">number</span></span>) &#123;</span><br><span class="line">        <span class="keyword">super</span>(element);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> ex2 = Example2.build(<span class="built_in">document</span>.body, <span class="number">0</span>);   <span class="comment">// 必须传递两个参数，HTMLElement和number</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -320,7 +317,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/typescript/" rel="tag"># typescript</a>
+            <a href="/tags/typescript-javascript/" rel="tag"># typescript javascript</a>
           
         </div>
       
@@ -333,8 +330,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/11/TS-一些工具泛型的使用及其实现/" rel="next" title="TS 一些工具泛型的使用及其实现">
-                <i class="fa fa-chevron-left"></i> TS 一些工具泛型的使用及其实现
+              <a href="/2019/06/24/npm安装puppeteer失败/" rel="next" title="npm安装puppeteer失败">
+                <i class="fa fa-chevron-left"></i> npm安装puppeteer失败
               </a>
             
           </div>
@@ -342,10 +339,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/03/git-clone一个github上的仓库太慢/" rel="prev" title="git clone一个github上的仓库太慢">
-                git clone一个github上的仓库太慢 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -397,17 +390,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -474,22 +458,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#在typescript中，获取数组中的子项类型"><span class="nav-number">1.</span> <span class="nav-text">在typescript中，获取数组中的子项类型</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
